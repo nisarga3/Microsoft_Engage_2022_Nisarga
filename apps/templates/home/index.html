@@ -1,0 +1,254 @@
+{% extends "layouts/base.html" %} {% block title %} Dashboard {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %} {% block content %}
+
+<div class="row">
+  <div class="col-12">
+    <div class="card card-chart">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-sm-6 text-left">
+            <h5 class="card-category">Cars</h5>
+            <h2 class="card-title">Number of Cars Manufactured</h2>
+          </div>
+          <div class="col-sm-6">
+            <div
+              class="btn-group btn-group-toggle float-right"
+              data-toggle="buttons"
+            >
+              <label class="btn btn-sm btn-primary btn-simple active" id="0">
+                <input type="radio" name="options" checked />
+                <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block"
+                  >Model</span
+                >
+
+                <span class="d-block d-sm-none">
+                  <i class="tim-icons icon-tap-02"></i>
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="chart-area">
+          <canvas id="chartBig1"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card" style="width: 18rem" ;>
+      <div class="card-body">
+        <h5 class="card-category">TOTAL SALES</h5>
+        <h3 class="card-title">
+          <i class="tim-icons icon-delivery-fast text-info"></i> $15.98 B
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card" style="width: 18rem" ;>
+      <div class="card-body">
+        <h5 class="card-category">AVERAGE EX SHOWROOM PRICES</h5>
+        <h3 class="card-title">
+          <i class="tim-icons icon-delivery-fast text-info"></i> $59,16,511
+        </h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="card" style="width: 18rem" ;>
+      <div class="card-body">
+        <h5 class="card-category">AVERAGE BOOT SPACE</h5>
+        <h3 class="card-title">
+          <i class="tim-icons icon-delivery-fast text-info"></i> 387 litres
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-4">
+    <div class="card card-chart">
+      <div class="card-header">
+        <h5 class="card-category">Most them are Petrol cars</h5>
+        <h3 class="card-title">
+          <!-- <i class="tim-icons icon-bell-55 text-primary"></i>    -->
+          <img
+            src="../../static/assets/img/gas-station.png"
+            alt=""
+            class=""
+            width="30px"
+            height="30px"
+          />
+          Fuel Type
+        </h3>
+      </div>
+      <div class="card-body">
+        <div class="chart-area">
+          <canvas id="chartLinePurple"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="card card-chart">
+      <div class="card-header">
+        <h5 class="card-category">Most are Manual Cars</h5>
+        <h3 class="card-title">
+          <i class="tim-icons icon-delivery-fast text-info"></i>Type
+        </h3>
+      </div>
+      <div class="card-body">
+        <div class="chart-area">
+          <canvas id="CountryChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="card card-chart">
+      <div class="card-header">
+        <h5 class="card-category">Most are Forward Wheel Drive</h5>
+        <h3 class="card-title">
+          <i class="tim-icons icon-delivery-fast text-info"></i> Drive Train
+        </h3>
+      </div>
+      <div class="card-body">
+        <div class="chart-area">
+          <canvas id="DriveTrain"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="card card-chart">
+      <div class="card-header">
+        <h5 class="card-category">1219 Cars have this feature</h5>
+        <h3 class="card-title">
+          <i class="tim-icons icon-send text-success"></i> Power Steering
+        </h3>
+      </div>
+      <div class="card-body">
+        <div class="chart-area">
+          <canvas id="chartLineGreen"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-8">
+    <div class="card card-chart" style="height: 35rem">
+      <div class="card-header">
+        <h5 class="card-category">
+          Most of them are in the front and transverse
+        </h5>
+        <h3 class="card-title">
+          <i class="tim-icons icon-send text-success"></i> Engine_Location
+        </h3>
+      </div>
+      <div class="card-body">
+        <div class="chart-area">
+          <canvas id="Engine"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card card-chart">
+      <div class="card-header">
+        <h5 class="card-category"></h5>
+        <h3 class="card-title">
+          <img
+            src="../../static/assets/img/gas-station.png"
+            alt=""
+            class=""
+            width="30px"
+            height="30px"
+          />
+          Fuel tank capacity
+        </h3>
+
+        <h3 class="card-category-name">
+          Average Fuel Tank Capacity= 64 litres
+        </h3>
+        <h3 class="card-category-name">
+          Maximum Fuel Tank Capacity= 105 litres
+        </h3>
+        <h3 class="card-category-name">
+          >Minimum Fuel Tank Capacity= 15 litres
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card card-chart" style="height: 28rem">
+      <div class="card-header">
+        <h5 class="card-category">Most cars do not have power Seats</h5>
+        <h3 class="card-title">
+          <i class="tim-icons icon-delivery-fast text-info"></i> Power Seats
+        </h3>
+      </div>
+      <div class="card-body">
+        <div class="chart-area">
+          <canvas id="Seats"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-8">
+    <div class="card card-chart" style="height: 35rem">
+      <div class="card-header">
+        <h5 class="card-category">Most are SUV</h5>
+        <h3 class="card-title">
+          <i class="tim-icons icon-delivery-fast text-info"></i>Body Type
+        </h3>
+      </div>
+      <div class="card-body">
+        <div class="chart-area">
+          <canvas id="bodytypepe"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <div class="card card-chart" style="height: 45rem">
+      <div class="card-header">
+        <h5 class="card-category">Most are SUV</h5>
+        <h3 class="card-title">
+          <i class="tim-icons icon-delivery-fast text-info"></i>City Mileage And
+          ARAI Certified Mileage
+        </h3>
+      </div>
+      <div class="card-body">
+        <div class="chart-area">
+          <canvas id="Mileage"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6 col-md-12">
+    {% endblock content %}
+
+    <!-- Specific Page JS goes HERE  -->
+    {% block javascripts %}
+
+    <script>
+      $(document).ready(function () {
+        // Javascript method's body can be found in assets/js/demos.js
+        demo.initDashboardPageCharts();
+      });
+    </script>
+
+    {% endblock javascripts %}
+  </div>
+</div>
